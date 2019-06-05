@@ -62,6 +62,7 @@ function validarTexto(campo, alerta) {
   }
   
   if (validarValor(largada, "alertaLargada")) {
+  
   }
 
   if (validarTexto(nome, "alertaNome")) {

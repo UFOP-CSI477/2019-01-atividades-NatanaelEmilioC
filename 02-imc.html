@@ -12,56 +12,65 @@
 
 <body>
 
-    <div class="jumbotron text-center bg-info">
-        <h1><span style="color:azure">Indice de Massa Corporea</h1>
+    <div class="container">
+        <div class="form-group col-md-12">
+            <div class="jumbotron text-center bg-info">
+                <h1><span style="color:rgb(252, 252, 252)">Indice de Massa Corporea</h1>
+            </div>
+        </div>
     </div>
 
     <div class="container">
-        <div class="form-group col-md-12">
+        <form name="dados">
+            <div id="grupo1" class="form-group">
+                <label for="valor1" id="labelv1">Valor 1</label>
+                <input type="text" name="valor1" class="form-control">
 
-            <div class="form-row">
-                    <h3 class="align-content-center">Adicione um corredor</h1>
+                <div id="alerta1" style="display: none" class="alert alert-danger">
+                    <span>Preencha o primeiro valor corretamente!<span>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="largada" id="labelLargada"> Largada </label>
-                        <input class="form-control" type="number" name="largada" id="place">
-                        <div id="alertaLargada" style="display: none" class="alert alert-danger">
-                            <span>Incluir a posição de largada</span>
-                        </div>
-                    </div>
+            </div>
 
-                    <div class="form-group col-md-6">
-                        <label for="nome" id="labelNome"> Nome </label>
-                        <input class="form-control" type="text" name="nome" id="name">
-                        <div id="alertaNome" style="display: none" class="alert alert-danger">
-                            <span>Incluir o nome do competidor</span>
-                        </div>
-                    </div>
+            <div id="grupo2" class="form-group">
+                <label for="valor2" id="labelv2">Valor 2</label>
+                <input type="text" name="valor2" class="form-control">
 
-                    <div class="form-group col-md-3">
-                        <label for="tempo" id="labelTempo"> Tempo em segundos </label>
-                        <input class="form-control" type="number" name="tempo" id="time">
-                        <div id="alertaTempo" style="display: none" class="alert alert-danger">
-                            <span>Incluir o Tempo</span>
-                        </div>
-                    </div>
-
+                <div id="alerta2" style="display: none" class="alert alert-danger">
+                    <span>Preencha o segundo valor corretamente!<span>
                 </div>
-                <div class="form-row">
-                    <span class="align-content-center">*Numero maximo de competidores é 6</p>
-                </div>
+            </div>
 
-        </div>
+            <div id="grupo3" class="form-group">
+                <label for="resultado" id="labelv3">Resultado</label>
+                <input type="text" name="resultado" class="form-control">
 
-        <div class="form-group col-md-2">
-            <button class="btn btn-primary btn-dark" name="incluir" onclick="validar()">Incluir</button>
-        </div>
-      </div>
+                    <div id="alerta3" style="display: none" class="alert alert-danger">
+                            <span>Subnutrição!<span></div>
+                    <div id="alerta4" style="display: none" class="alert alert-sucess">
+                            <span>Peso Saudável!<span></div>
+                    <div id="alerta5" style="display: none" class="alert alert-warning">
+                            <span>Sobrepeso!<span></div>
+                    <div id="alerta6" style="display: none" class="alert alert-danger">
+                            <span>Obesidade grau 1<span></div>
+                    <div id="alerta7" style="display: none" class="alert alert-danger">
+                            <span>Obesidade grau 2<span></div>
+                    <div id="alerta8" style="display: none" class="alert alert-danger">
+                            <span>Obesidade grau 3<span></div>
+
+                                    
+                <button class="btn-info" type="button" onclick="calcular() ; disabled = true;">Calcular</button>
+                <input class="btn-danger" type="reset" onclick="paraResetar();" value="Limpar valores"/>
+            </div>
+
+        </form>
+    </div>
+    </div>
+
     <script src="02-imc.js"></script>
 
 </body>
+
 <footer class="footer bg-dark">
     <div class="container">
         <div>
