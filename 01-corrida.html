@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Competição de carrinhos de rolimã</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="jumbotron text-center bg-dark">
+        <h1><span style="color:azure">Rolimã Race</h1>
+    </div>
+
+    <div class="container">
+        <div class="form-group col-md-12">
+
+            <div class="form-row">
+                    <h3 class="align-content-center">Adicione um corredor</h1>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="largada" id="labelLargada"> Largada </label>
+                        <input class="form-control" type="number" name="largada" id="place">
+                        <div id="alertaLargada" style="display: none" class="alert alert-danger">
+                            <span>Incluir a posição de largada</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="nome" id="labelNome"> Nome </label>
+                        <input class="form-control" type="text" name="nome" id="name">
+                        <div id="alertaNome" style="display: none" class="alert alert-danger">
+                            <span>Incluir o nome do competidor</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="tempo" id="labelTempo"> Tempo em segundos </label>
+                        <input class="form-control" type="number" name="tempo" id="time">
+                        <div id="alertaTempo" style="display: none" class="alert alert-danger">
+                            <span>Incluir o Tempo</span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="form-row">
+                    <span class="align-content-center">*Numero maximo de competidores é 6</p>
+                </div>
+
+        </div>
+
+        <div class="form-group col-md-2">
+            <button class="btn btn-primary btn-dark" name="incluir" onclick="validar()">Incluir</button>
+        </div>
+
+        <table class="table table-borderless table-active">
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Largada</th>
+                    <th>Competidor(a)</th>
+                    <th>Tempo (s)</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>John Lennon</td>
+                    <td>83</td>
+                    <td>Vencedor!</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>Paul McCartney</td>
+                    <td>89</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>George Harrison</td>
+                    <td>91</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>Ringo Starr</td>
+                    <td>94</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>Ringo Starr</td>
+                    <td>94</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>Ringo Starr</td>
+                    <td>94</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="01-corrida.js"></script>
+
+</body>
+<footer class="footer bg-dark">
+    <div class="container">
+        <div>
+            <span class="text-white">CSI477 - Natanael Emilio da Costa</span>
+        </div>
+    </div>
+</footer>
+
+</html>
