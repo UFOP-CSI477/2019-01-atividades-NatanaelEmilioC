@@ -14,8 +14,8 @@
 
 		<div class="container">
 			<div class="form-group col-md-12">
-				<div class="jumbotron text-center bg-info">
-					<h1><span style="color:rgb(252, 252, 252)">Indice de Massa Corporea</h1>
+				<div class="jumbotron text-center bg-primary jumbotron-fluid">
+					<h1><span style="color:rgb(252, 252, 252)">Escala Richter</h1>
 				</div>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 		<div class="container">
 			<form name="dados">
 				<div id="grupo1" class="form-group">
-					<label for="valor1" id="labelv1">Valor 1</label>
+					<label for="valor1" id="labelv1">Amplitude</label>
 					<input type="text" name="valor1" class="form-control">
 	
 					<div id="alerta1" style="display: none" class="alert alert-danger">
@@ -33,7 +33,7 @@
 				</div>
 	
 				<div id="grupo2" class="form-group">
-					<label for="valor2" id="labelv2">Valor 2</label>
+					<label for="valor2" id="labelv2">Intervalo</label>
 					<input type="text" name="valor2" class="form-control">
 	
 					<div id="alerta2" style="display: none" class="alert alert-danger">
@@ -45,18 +45,21 @@
 					<label for="resultado" id="labelv3">Resultado</label>
 					<input type="text" name="resultado" class="form-control">
 	
-						<div id="alerta3" style="display: none" class="alert alert-danger">
-								<span>Subnutrição!<span></div>
+						<div id="alerta3" style="display: none" class="alert alert-sucess">
+								<span>Geralmente não sentido, mas gravado!<span></div>
 						<div id="alerta4" style="display: none" class="alert alert-sucess">
-								<span>Peso Saudável!<span></div>
+								<span>Ás vezes sentido, mas raramente causa danos!<span></div>
 						<div id="alerta5" style="display: none" class="alert alert-warning">
-								<span>Sobrepeso!<span></div>
+								<span>No máximo causa pequenso danos a prédios bem construidos,<br>
+									mas pode danificar seriamente casas mal consutridas em regiões<br>
+									próximas!<span></div>
 						<div id="alerta6" style="display: none" class="alert alert-danger">
-								<span>Obesidade grau 1<span></div>
+								<span>Pode ser destrutivo em áreas em torno de até 100km do epicentro<span></div>
 						<div id="alerta7" style="display: none" class="alert alert-danger">
-								<span>Obesidade grau 2<span></div>
+								<span>Grande terremoto. Pode causar sérios danos numa grande faixa<span></div>
 						<div id="alerta8" style="display: none" class="alert alert-danger">
-								<span>Obesidade grau 3<span></div>
+								<span>Enorme terremoto. Pode causar graves danos em muitas áreas<br>
+									mesmo que estejam a centenas de quilômetros<span></div>
 	
 										
 					<button class="btn-info" type="button" onclick="calcular() ; disabled = true;">Calcular</button>

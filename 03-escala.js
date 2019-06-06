@@ -1,18 +1,20 @@
-function validarValor(campo, alerta) {
+function validar(campo, alerta, label) {
 
   var n = parseFloat(campo.value);
 
   if (campo.value.length == 0 || isNaN(n)) {
-    
+
     // Erro
     document.getElementById(alerta).style.display = "block";
+
+    document.getElementById(label).classList.add("text-danger");
 
     campo.classList.add("is-invalid");
 
     campo.value = "";
     campo.focus();
     return false;
-    
+
   }
 
   // Tudo correto
@@ -26,110 +28,55 @@ function validarValor(campo, alerta) {
 
 }
 
-function validarTexto(campo, alerta) {
-  
-  if (campo.value.length == 0 || !isNaN(n)) {      
-      // Erro
-      document.getElementById(alerta).style.display = "block";
-  
-      campo.classList.add("is-invalid");
-  
-      campo.value = "";
-      campo.focus();
-      return false;
-      
-    }
-  
-    // Tudo correto
-    document.getElementById(alerta).style.display = "none";
-    campo.classList.remove("is-invalid");
-    campo.classList.add("is-valid");
-  
-    document.getElementById(label).classList.remove("text-danger");
-  
+function rotulo(campo, alerta, label) {
+
+  if (campo.value > 0) {
+    document.getElementById(alerta).style.display = "block";
+    document.getElementById(label).classList.add("text-info");
+    campo.focus();
     return true;
-  
   }
 
-  function validar() {
-
-  var largada = document.getElementById("place");
-  var nome = document.getElementById("name");
-	var tempo = document.getElementById("time");
-  
-    if ( validarValor(tempo, "alertaTempo")  && validarValor(largada, "alertaLargada")
-    && validarTexto(nome, "alertaNome")) {
-  
-     /* var n1 = parseFloat(v1.value);
-      var n2 = parseFloat(v2.value);
-    
-      var res = n1 + n2;
-  
-      document.dados.resultado.value = res;*/
-        
-    }
-
-  
-  }
-
-function mostrarTabela(id){
-
-var tabela = document.getElementById(id);
-
-if(tabela.style.display == 'block')
-    tabela.style.display = 'none';
-else
-    tabela.style.display = 'block';
 }
- 
-/*
 
-function calcular1() {
+function calcular() {
 
-    var v1 = document.dados.valor1;
-    var v2 = document.dados.valor2;
+  document.getElementById("alerta3").style.display = "none";
   
-    var n1 = parseFloat(v1.value);
-    var n2 = parseFloat(document.dados.valor2.value);
+  var v1 = document.dados.valor1;
+  var v2 = document.dados.valor2;
+  var res;
   
-    if ( v1.value.length == 0 || isNaN(n1) ) {
-  
-      //window.alert("Preencha o primeiro valor corretamente!");
-  
-      //document.getElementById("alerta1").innerHTML = "<h3>Preencha o primeiro valor corretamente!<h3>";
-  
-      document.getElementById("alerta1").style.display = "block";
-  
-      document.getElementById("labelv1").classList.add("text-danger");
-  
-      v1.classList.add("is-invalid");
-  
-      v1.value = "";
-      v1.focus();
-      return;
-  
+  if (validar(v1, "alerta1", "labelv1") && validar(v2, "alerta2", "labelv2")) {
+
+    var amplitude = parseFloat(v1.value);
+    var intervalo = parseFloat(v2.value);
+
+    res = Math.log10(amplitude) + 3*Math.log10(8*intervalo) - 2.92;
+
+    document.dados.resultado.value = res.toPrecision(3);
+
+    if (res < 3.5) {
+      rotulo(document.dados.resultado,"alerta3","labelv3");
+    } else
+    if (res < 5.4) {
+      rotulo(document.dados.resultado,"alerta4","labelv3");
+    } else
+    if (res < 6.0) {
+      rotulo(document.dados.resultado,"alerta5","labelv3");
+    } else
+    if (res < 6.9) {
+      rotulo(document.dados.resultado,"alerta6","labelv3");
+    } else
+    if (res < 7.9) {
+      rotulo(document.dados.resultado,"alerta7","labelv3");
     }
-  
-    document.getElementById("alerta1").style.display = "none";
-    v1.classList.remove("is-invalid");
-    v1.classList.add("is-valid");
-  
-    document.getElementById("labelv1").classList.remove("text-danger");
-    // document.getElementById("labelv1").classList.add("text-success");
-  
-    if ( document.dados.valor2.value.length == 0 || isNaN(n2) ) {
-  
-      window.alert("Preencha o segundo valor corretamente!");
-      document.dados.valor2.value = "";
-      document.dados.valor2.focus();
-      return;
-  
+    else {
+      rotulo(document.dados.resultado,"alerta8","labelv3");
     }
-  
-    var res = n1 + n2;
-  
-    document.dados.resultado.value = res;
-  
-  
   }
-*/  
+}
+
+function paraResetar(){
+  window.location.reload(); 
+}
